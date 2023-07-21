@@ -1,0 +1,21 @@
+{
+    "name": "TS Container",
+    "dockerComposeFile": ["../docker-compose.yaml"],
+    "service": "tsapp",
+    "shutdownAction": "none",
+
+    "workspaceFolder": "/workspace",
+    "overrideCommand": true,
+    "features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"upgradePackages": true,
+			"username": "devcontainer",
+			"userUid": "automatic",
+			"userGid": "automatic"
+		}
+  },
+  "extensions": ["dbaeumer.vscode-eslint"]
+}

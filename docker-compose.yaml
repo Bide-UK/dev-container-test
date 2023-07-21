@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  pythonapp:
+    container_name: pythonapp
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+    - .:/workspace:cached
+    build: 
+      context: ./python-http
+      dockerfile: Dockerfile
+    ports:
+      - "50000:50000"
+
+  goapp:
+    container_name: goapp
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+    - .:/workspace:cached
+    build: 
+      context: ./go-http
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+
+  reactapp:
+    container_name: tsapp
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+    - .:/workspace:cached
+    build: 
+      context: ./ts-http
+      dockerfile: Dockerfile
+    ports:
+      - "30000:30000"

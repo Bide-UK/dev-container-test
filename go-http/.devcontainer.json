@@ -1,0 +1,21 @@
+{
+    "name": "Go Container",
+    "dockerComposeFile": ["../docker-compose.yaml"],
+    "service": "goapp",
+    "shutdownAction": "none",
+
+    "workspaceFolder": "/workspace/app",
+    "overrideCommand": true,
+    "features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"upgradePackages": true,
+			"username": "devcontainer",
+			"userUid": "automatic",
+			"userGid": "automatic"
+		}
+  },
+  "extensions": ["golang.go"]
+}
